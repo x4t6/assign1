@@ -2,6 +2,7 @@
 PImage fighter,enemy,treasure,hp,bg1,bg2;
 int eRandx,eRandy;
 int tRandx,tRandy;
+int bg1X = -640, bg2X = 0;
 
 void setup () {
   size(640,480) ;  // must use this size.
@@ -18,17 +19,26 @@ void setup () {
   
   eRandx = 0;
   eRandy = floor(random(0,440));
-
+  
 }
 
 void draw() {
-  image(bg1,0,0);
+  
+  image(bg1,bg1X,0);
+  image(bg2,bg2X,0);
+  
+  fill(#FF0000);
+  rect(20,15,100,30);
   image(hp,15,15);
+  
   image(fighter,570,215);
   image(treasure,tRandx,tRandy);
   image(enemy,eRandx,eRandy);
   
-  eRandx += 4 ;
-  eRandx %= 640 ;
+  bg1X +=1 ;  bg2X += 1 ;
+  eRandx += 4 ;  eRandx %= 640 ;
+  
+  if(bg2X>640)bg2X = -640;
+  if(bg1X>640)bg1X = -640;
   // your code
 }
