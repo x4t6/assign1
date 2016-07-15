@@ -19,7 +19,7 @@ void setup () {
   tRandy = floor(random(0,440));
   
   eRandx = 0;
-  eRandy = floor(random(0,440));
+  eRandy = floor(random(0,420));
 }
 
 void draw() {
