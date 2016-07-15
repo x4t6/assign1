@@ -1,3 +1,4 @@
+
 /* please implement your assign1 code in this file. */
 PImage fighter,enemy,treasure,hp,bg1,bg2;
 int eRandx,eRandy;
@@ -20,6 +21,7 @@ void setup () {
   
   eRandx = 0;
   eRandy = floor(random(0,420));
+  
 }
 
 void draw() {
@@ -37,8 +39,13 @@ void draw() {
   image(enemy,eRandx,eRandy);
   
   bg1X +=1 ;  bg2X += 1 ;
-  eRandx += 4 ;  eRandx %= 640 ;
+  
+  eRandx += 4 ;  
+  if(eRandx>640){
+    eRandy = floor(random(0,420));
+    eRandx %= 640 ;
+  }
   
   if(bg2X>640)bg2X = -640;
-  if(bg1X>640)bg1X = -640;
+  if(bg1X>640)bg1X = -640;   
 }
