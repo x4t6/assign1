@@ -7,6 +7,7 @@ int bg1X = -640, bg2X = 0;
 void setup () {
   size(640,480) ;  // must use this size.
   // your code
+  
   fighter = loadImage("img/fighter.png");
   enemy = loadImage("img/enemy.png");
   treasure = loadImage("img/treasure.png");
@@ -19,10 +20,10 @@ void setup () {
   
   eRandx = 0;
   eRandy = floor(random(0,440));
-  
 }
 
 void draw() {
+  // your code
   
   image(bg1,bg1X,0);
   image(bg2,bg2X,0);
@@ -40,5 +41,4 @@ void draw() {
   
   if(bg2X>640)bg2X = -640;
   if(bg1X>640)bg1X = -640;
-  // your code
 }
