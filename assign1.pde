@@ -1,9 +1,9 @@
-
 /* please implement your assign1 code in this file. */
 PImage fighter,enemy,treasure,hp,bg1,bg2;
 int eRandx,eRandy;
 int tRandx,tRandy;
 int bg1X = -640, bg2X = 0;
+int hpLength = 0;
 
 void setup () {
   size(640,480) ;  // must use this size.
@@ -22,6 +22,8 @@ void setup () {
   eRandx = 0;
   eRandy = floor(random(0,420));
   
+  hpLength = (int)random(0,200);
+  
 }
 
 void draw() {
@@ -31,13 +33,12 @@ void draw() {
   image(bg2,bg2X,0);
   
   fill(#FF0000);
-  rect(20,15,100,30);
-  image(hp,15,15);
-  
+  rect(20,15,hpLength,30);
+    
   image(fighter,570,215);
   image(treasure,tRandx,tRandy);
   image(enemy,eRandx,eRandy);
-  
+  image(hp,15,15);
   bg1X +=1 ;  bg2X += 1 ;
   
   eRandx += 4 ;  
