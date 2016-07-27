@@ -43,7 +43,7 @@ void draw() {
   
   eRandx += 4 ;  
   if(eRandx>640){
-    eRandy = floor(random(0,420));
+    //eRandy = floor(random(0,420));
     eRandx %= 640 ;
   }
   
